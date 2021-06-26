@@ -2,7 +2,7 @@ import math
 import time
 
 
-async def progress_for_pyrogram(
+async def progress_for_upload(
     current,
     total,
     ud_type,
