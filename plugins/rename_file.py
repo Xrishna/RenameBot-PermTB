@@ -20,6 +20,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 
 from plugins.helpers import progress_for_pyrogram
+from plugins.uploadprogress import progress_for_upload
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
@@ -151,7 +152,7 @@ async def rename_doc(bot, message):
                 caption=description,
                 # reply_markup=reply_markup,
                 reply_to_message_id=message.reply_to_message.message_id,
-                progress=progress_for_pyrogram,
+                progress=progress_for_upload,
                 progress_args=(
                     script.UPLOAD_START,
                     sendmsg, 
