@@ -5,8 +5,8 @@ class script(object):
 
     RENAME_403_ERR = "What Are You Doing? You are Banned"
     UPGRADE_TEXT = "CONTACT @prgofficial"
-    DOWNLOAD_START = "Downloding..."
-    UPLOAD_START = "Starting to upload..."
+    DOWNLOAD_START = "Wait🤒...."
+    UPLOAD_START = "Wait🤒...."
     AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me > ©  @prgofficial **"
     SAVED_THUMB = "Thumbnail Saved ✅ This Is Permanent"
     DEL_THUMB = "Thumbnail cleared succesfully!"
