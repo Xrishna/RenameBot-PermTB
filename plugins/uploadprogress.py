@@ -23,16 +23,16 @@ async def progress_for_upload(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "ㅤㅤㅤㅤ╭───────────────╮\n ㅤㅤㅤ ㅤ ㅤ│  📊  **Progress Bar**  📊\nㅤㅤㅤㅤ╰───────────────╯\n\n╭───────────────────────╮\n│ » 📊 **Status :** Uploading🤒.....\n│\n│ » [{0}{1}]\n│\n│ » 📤 **Uploading :** {2}%".format(
+        progress = "ㅤㅤㅤㅤ╭───────────────╮\nㅤㅤㅤㅤ│  📊  Progress Bar  📊\nㅤㅤㅤㅤ╰───────────────╯\n\n╭───────────────────────╮\n│ » 📊 **Status :** Uploading🤒.....\n│\n│ » [{0}{1}]\n│\n│ » 📤 **Uploaded :** {2}%".format(
             ''.join(["■" for i in range(math.floor(percentage / 5))]),
             ''.join(["▢" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2))
 
-        tmp = progress + "\n│\n│ » 📂 **Uploaded :** {0} Of {1}\n│\n️│ » 🚀 Speed : {2}/s\n│\n│ » 🗄 Size : {1}\n│\n│ » ⏱ ETA :  {3}\n╰───────────────────────╯\n\n╭───────────╮\n│🌟Powered By 🌟\n│ » @TeamHP\n│ » @Itsxrishna\n╰───────────╯".format(
+        tmp = progress + "\n│\n│ » ✅ **Done :** `{0}` Of `{1}`\n│\n️│ » 🚀 **Speed :** {2}\n│\n│ » 🗄 **Total Size :** {1}\n│\n│ » ⏱ **ETA :**  {3}\n╰───────────────────────╯\n\n╭───────────╮\n│🌟Powered By 🌟\n│ » @TeamHP\n│ » @Itsxrishna\n╰───────────╯".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
-            # elapsed_time if elapsed_time != '' else "0 s",
+            # elapsed_time if elapsed_time !='' else "0 s",
             estimated_total_time if estimated_total_time != '' else "0 s"
         )
         try:
