@@ -95,7 +95,8 @@ async def rename_doc(bot, message):
             progress_args=(
                 script.DOWNLOAD_START,
                 sendmsg,
-                c_time
+                c_time,
+                file_name
             )
         )
         if the_real_download_location is not None:
@@ -156,7 +157,8 @@ async def rename_doc(bot, message):
                 progress_args=(
                     script.UPLOAD_START,
                     sendmsg, 
-                    c_time
+                    c_time,
+                    new_file_name.rsplit("/", 1)[-1]
                 )
             )
 
