@@ -2,7 +2,7 @@ import math
 import time
 
 
-async def progress_for_upload(
+async def progress_for_pyrogram(
     current,
     total,
     ud_type,
@@ -23,16 +23,17 @@ async def progress_for_upload(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "ㅤㅤㅤㅤ╭───────────────╮\nㅤㅤㅤㅤ│  📊  Progress Bar  📊\nㅤㅤㅤㅤ╰───────────────╯\n\n╭───────────────────────╮\n│ » 📊 **Status :** Uploading🤒.....\n│\n│ » [{0}{1}]\n│\n│ » 📤 **Uploaded :** `{2}%`".format(
+        progress = "    ╭───────────────╮\n    │  📊  Progress Bar  📊/n    ╰───────────────╯\n\n   » 📁 File Name : {0} \n╭───────────────────────╮\n│ » 📊 **Status :** Downloding😴.....\n│\n│ » [{1}{2}]\n│\n│ » 📥 **Uploaded :** {3}%".format(
+            (filename),
             ''.join(["■" for i in range(math.floor(percentage / 5))]),
             ''.join(["▢" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2))
 
-        tmp = progress + "\n│\n│ » ✅ **Done :** `{0}` Of `{1}`\n│\n️│ » 🚀 **Speed :** `{2}`\n│\n│ » 🗄 **Total Size :** `{1}`\n│\n│ » ⏱ **ETA :**  `{3}`\n╰───────────────────────╯\n\n╭───────────╮\n│🌟Powered By 🌟\n│ » @TeamHP\n│ » @Itsxrishna\n╰───────────╯".format(
+        tmp = progress + "\n│\n│ » ✅**Done :** {0} Of {1}\n│\n️│ » 🚀 Speed : {2}/s\n│\n│ » 🗄 Size : {1}\n│\n│ » ⏱ ETA :  {3}\n╰───────────────────────╯\n\n╭───────────╮\n│🌟Powered By 🌟\n│ » @TeamHP\n│ » @Itsxrishna\n╰───────────╯".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
-            # elapsed_time if elapsed_time !='' else "0 s",
+            # elapsed_time if elapsed_time != '' else "0 s",
             estimated_total_time if estimated_total_time != '' else "0 s"
         )
         try:
@@ -53,7 +54,7 @@ def humanbytes(size):
         return ""
     power = 2**10
     n = 0
-    Dic_powerN = {0: ' ', 1: 'Ki', 2: 'Mi', 3: 'Gi', 4: 'Ti'}
+    Dic_powerN = {0: ' ', 1: 'K', 2: 'M', 3: 'G', 4: 'T'}
     while size > power:
         size /= power
         n += 1
