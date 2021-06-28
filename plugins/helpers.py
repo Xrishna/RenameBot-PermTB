@@ -23,7 +23,8 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "ㅤㅤㅤㅤ╭───────────────╮\n ㅤㅤㅤㅤ ㅤ│  📊  **Progress Bar**  📊\nㅤㅤㅤㅤㅤ╰───────────────╯\n\n╭───────────────────────╮\n│ » 📊 **Status :** Downloding😴.....\n│\n│ » [{0}{1}]\n│\n│ » 📥 **Downloaded :** {2}%".format(
+        progress = "    ╭───────────────╮\n    │  📊  Progress Bar  📊/n    ╰───────────────╯\n\n   » 📁 File Name : {0} \n╭───────────────────────╮\n│ » 📊 **Status :** Downloding😴.....\n│\n│ » [{1}{2}]\n│\n│ » 📥 **Downloaded :** {3}%".format(
+            (filename),
             ''.join(["■" for i in range(math.floor(percentage / 5))]),
             ''.join(["▢" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2))
